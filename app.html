@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPlanit - Wedding Planning App</title>
+    <link rel="stylesheet" href="app-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <button class="back-btn" onclick="goBack()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <h1 class="header-title" id="header-title">Home</h1>
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <!-- Home Screen -->
+            <div class="screen active" id="home-screen">
+                <div class="welcome-section">
+                    <h2>Welcome to VPlanit</h2>
+                    <p>Plan your perfect wedding with ease</p>
+                </div>
+                
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Events</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">150</span>
+                        <span class="stat-label">Guests</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">₹15L</span>
+                        <span class="stat-label">Budget</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="showScreen('events-screen')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Manage Events
+                    </button>
+                    <button class="action-btn" onclick="showScreen('budget-screen')">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Budget & Guests
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add Events Screen -->
+            <div class="screen" id="events-screen">
+                <div class="screen-header">
+                    <h2>Add Events</h2>
+                    <button class="custom-btn">
+                        <span>Custom</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="events-section">
+                    <h3>Scheduled Events</h3>
+                    <div class="day-group">
+                        <div class="day-header">Day 1 | Feb 3, 2026</div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <span class="event-name">Chaak</span>
+                                <span class="event-status scheduled">Scheduled</span>
+                            </div>
+                            <button class="edit-btn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <span class="event-name">Bhaat</span>
+                                <span class="event-status scheduled">Scheduled</span>
+                            </div>
+                            <button class="edit-btn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="day-group">
+                        <div class="day-header">Day 2 | Feb 4, 2026</div>
+                        <div class="event-item">
+                            <div class="event-info">
+                                <span class="event-name">Wedding Ceremony</span>
+                                <span class="event-status scheduled">Scheduled</span>
+                            </div>
+                            <button class="edit-btn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-section">
+                    <h3>Default Events</h3>
+                    <div class="event-item">
+                        <div class="event-info">
+                            <span class="event-name">Haldi</span>
+                            <span class="event-status not-scheduled">Not scheduled</span>
+                        </div>
+                        <button class="add-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-info">
+                            <span class="event-name">Mehendi</span>
+                            <span class="event-status not-scheduled">Not scheduled</span>
+                        </div>
+                        <button class="add-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-info">
+                            <span class="event-name">Sangeet</span>
+                            <span class="event-status not-scheduled">Not scheduled</span>
+                        </div>
+                        <button class="add-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-info">
+                            <span class="event-name">Cocktail</span>
+                            <span class="event-status not-scheduled">Not scheduled</span>
+                        </div>
+                        <button class="add-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="screen-actions">
+                    <button class="btn-secondary">Skip</button>
+                    <button class="btn-primary">Next</button>
+                </div>
+            </div>
+
+            <!-- Budget & Guests Screen -->
+            <div class="screen" id="budget-screen">
+                <div class="screen-header">
+                    <h2>Budget & Guests</h2>
+                </div>
+
+                <div class="budget-section">
+                    <h3>Set your budget and guest count</h3>
+                    <p>This will help us create a personalized plan for your big day.</p>
+                    
+                    <div class="budget-input">
+                        <input type="text" placeholder="Total budget" class="budget-field">
+                        <div class="budget-display">
+                            <span class="budget-label">Budget</span>
+                            <span class="budget-amount">₹5,00,000</span>
+                        </div>
+                        <div class="budget-slider">
+                            <input type="range" min="100000" max="2000000" value="500000" class="slider" id="budget-slider">
+                        </div>
+                    </div>
+
+                    <div class="guest-input">
+                        <input type="number" placeholder="Number of guests" class="guest-field">
+                    </div>
+
+                    <div class="toggle-option">
+                        <span>Auto-calculate GST and deposits</span>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="screen-actions">
+                    <button class="btn-primary">Next</button>
+                </div>
+            </div>
+
+            <!-- Wedding Events Screen -->
+            <div class="screen" id="wedding-events-screen">
+                <div class="screen-header">
+                    <h2>Wedding Events</h2>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="day-timeline">
+                        <div class="day-header">Day 1 | 25th Jan 2026</div>
+                        <div class="timeline-line"></div>
+                        <div class="event-timeline">
+                            <div class="event-dot"></div>
+                            <div class="event-content">
+                                <div class="event-thumbnail morning-ceremony"></div>
+                                <div class="event-details">
+                                    <span class="event-name">Morning Ceremony</span>
+                                    <span class="event-time">8:00 AM - 12:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-timeline">
+                            <div class="event-dot"></div>
+                            <div class="event-content">
+                                <div class="event-thumbnail evening-reception"></div>
+                                <div class="event-details">
+                                    <span class="event-name">Evening Reception</span>
+                                    <span class="event-time">6:00 PM - 11:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-timeline">
+                        <div class="day-header">Day 2 | 3rd Feb 2026</div>
+                        <div class="timeline-line"></div>
+                        <div class="event-timeline">
+                            <div class="event-dot"></div>
+                            <div class="event-content">
+                                <div class="event-thumbnail haldi-ceremony"></div>
+                                <div class="event-details">
+                                    <span class="event-name">Haldi Ceremony</span>
+                                    <span class="event-time">10:00 AM - 1:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-timeline">
+                            <div class="event-dot"></div>
+                            <div class="event-content">
+                                <div class="event-thumbnail sangeet-night"></div>
+                                <div class="event-details">
+                                    <span class="event-name">Sangeet Night</span>
+                                    <span class="event-time">7:00 PM - 12:00 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-timeline">
+                        <div class="day-header">Day 3 | 4th Feb 2026</div>
+                        <div class="timeline-line"></div>
+                        <div class="event-timeline">
+                            <div class="event-dot"></div>
+                            <div class="event-content">
+                                <div class="event-thumbnail wedding-ceremony"></div>
+                                <div class="event-details">
+                                    <span class="event-name">Wedding Ceremony</span>
+                                    <span class="event-time">11:00 AM - 2:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Detail Screen -->
+            <div class="screen" id="event-detail-screen">
+                <div class="screen-header">
+                    <h2>Haldi Ceremony</h2>
+                    <p class="event-date">Day 2 | Nov 12, 2024</p>
+                </div>
+
+                <div class="event-sections">
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Venue</h3>
+                            <button class="edit-btn">Edit</button>
+                        </div>
+                        <div class="venue-grid">
+                            <div class="venue-info">
+                                <span class="label">Venue</span>
+                                <span class="value">The Grand Ballroom</span>
+                            </div>
+                            <div class="venue-info">
+                                <span class="label">Session</span>
+                                <span class="value">Evening</span>
+                            </div>
+                            <div class="venue-info">
+                                <span class="label">Date</span>
+                                <span class="value">November 12, 2024</span>
+                            </div>
+                            <div class="venue-info">
+                                <span class="label">Guests ></span>
+                                <span class="value">150</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Day Timeline</h3>
+                        </div>
+                        <div class="timeline-list">
+                            <div class="timeline-item">
+                                <span class="time">10:00 AM - 12:00 PM</span>
+                                <span class="task">Ceremony Setup</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="time">12:00 PM - 2:00 PM</span>
+                                <span class="task">Wedding Ceremony</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="time">7:00 PM - 11:00 PM</span>
+                                <span class="task">Reception</span>
+                            </div>
+                        </div>
+                        <button class="add-task-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Add Task
+                        </button>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Caterer Menu</h3>
+                            <button class="add-btn">Add +</button>
+                        </div>
+                        <div class="caterer-item">
+                            <span class="caterer-name">Spice Delight</span>
+                            <p class="caterer-desc">View and edit the menu for this event.</p>
+                            <button class="menu-btn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="1.5"/>
+                                    <circle cx="10" cy="6" r="1.5"/>
+                                    <circle cx="10" cy="14" r="1.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>Vendors</h3>
+                            <button class="add-btn">Add +</button>
+                        </div>
+                        <div class="vendor-list">
+                            <div class="vendor-item">
+                                <span class="vendor-name">Spice Delight</span>
+                                <span class="vendor-role">Caterer</span>
+                                <button class="menu-btn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <circle cx="10" cy="10" r="1.5"/>
+                                        <circle cx="10" cy="6" r="1.5"/>
+                                        <circle cx="10" cy="14" r="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="vendor-item">
+                                <span class="vendor-name">Eternal Captures</span>
+                                <span class="vendor-role">Photographer</span>
+                                <button class="menu-btn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <circle cx="10" cy="10" r="1.5"/>
+                                        <circle cx="10" cy="6" r="1.5"/>
+                                        <circle cx="10" cy="14" r="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="vendor-item">
+                                <span class="vendor-name">Floral Elegance</span>
+                                <span class="vendor-role">Decor</span>
+                                <button class="menu-btn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <circle cx="10" cy="10" r="1.5"/>
+                                        <circle cx="10" cy="6" r="1.5"/>
+                                        <circle cx="10" cy="14" r="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Vendors Screen -->
+            <div class="screen" id="vendors-screen">
+                <div class="screen-header">
+                    <h2>Add Vendors</h2>
+                </div>
+
+                <div class="vendor-categories">
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail grand-ballroom"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">The Grand Ballroom</span>
+                            <span class="vendor-type">Venue</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail catering"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Catering</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail photography"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Photography</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail music-dj"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Rhythm & Beats</span>
+                            <span class="vendor-type">Music & DJ</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail floral"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Floral Elegance</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail luxury-rides"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Luxury Rides</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="vendor-category">
+                        <div class="vendor-thumbnail bus-rides"></div>
+                        <div class="vendor-info">
+                            <span class="vendor-name">Bus/Traveller Rides</span>
+                        </div>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guests Screen -->
+            <div class="screen" id="guests-screen">
+                <div class="screen-header">
+                    <h2>Guests</h2>
+                </div>
+
+                <div class="search-bar">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 14l4 4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <input type="text" placeholder="Search guests or households">
+                </div>
+
+                <div class="guest-stats">
+                    <div class="stat-card primary">
+                        <span class="stat-value">120/150</span>
+                        <span class="stat-label">Total Guests</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">50</span>
+                        <span class="stat-label">Family</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">100</span>
+                        <span class="stat-label">Attending</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">30</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">10</span>
+                        <span class="stat-label">Waitlist</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">20</span>
+                        <span class="stat-label">Not Attending</span>
+                    </div>
+                </div>
+
+                <div class="guest-list">
+                    <div class="guest-item">
+                        <div class="guest-info">
+                            <span class="guest-name">David Brown</span>
+                            <span class="guest-relation">Friend | +1 members</span>
+                        </div>
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="1.5"/>
+                                <circle cx="10" cy="6" r="1.5"/>
+                                <circle cx="10" cy="14" r="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="guest-item">
+                        <div class="guest-info">
+                            <span class="guest-name">Emily Smith</span>
+                            <span class="guest-relation">Household | +5 members</span>
+                        </div>
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="1.5"/>
+                                <circle cx="10" cy="6" r="1.5"/>
+                                <circle cx="10" cy="14" r="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="guest-item">
+                        <div class="guest-info">
+                            <span class="guest-name">Michael Johnson</span>
+                            <span class="guest-relation">Household | +2 members</span>
+                        </div>
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="1.5"/>
+                                <circle cx="10" cy="6" r="1.5"/>
+                                <circle cx="10" cy="14" r="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="guest-item">
+                        <div class="guest-info">
+                            <span class="guest-name">Mukesh Nana ji</span>
+                            <span class="guest-relation">Household | +1 members</span>
+                        </div>
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="1.5"/>
+                                <circle cx="10" cy="6" r="1.5"/>
+                                <circle cx="10" cy="14" r="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="guest-item">
+                        <div class="guest-info">
+                            <span class="guest-name">Jessica Williams</span>
+                            <span class="guest-relation">Work | +2 members</span>
+                        </div>
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="1.5"/>
+                                <circle cx="10" cy="6" r="1.5"/>
+                                <circle cx="10" cy="14" r="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="fab">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Budget Screen -->
+            <div class="screen" id="budget-detail-screen">
+                <div class="screen-header">
+                    <h2>Budget</h2>
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="budget-tabs">
+                    <button class="tab-btn active">Vendors</button>
+                    <button class="tab-btn">All Payments</button>
+                </div>
+
+                <div class="budget-summary">
+                    <div class="total-budget">
+                        <span class="budget-label">Total Budget</span>
+                        <span class="budget-amount">₹1,26,540 / 15,00,000</span>
+                    </div>
+                    <div class="budget-breakdown">
+                        <div class="budget-item">
+                            <span class="budget-label">Advance</span>
+                            <span class="budget-value">₹90,000</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="budget-label">Dues</span>
+                            <span class="budget-value">₹2,05,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vendor-payments">
+                    <div class="vendor-payment">
+                        <div class="vendor-info">
+                            <span class="vendor-name">Spice Delight</span>
+                            <span class="vendor-category">Caterer</span>
+                        </div>
+                        <div class="payment-info">
+                            <span class="total-cost">₹2,95,000</span>
+                            <span class="paid-amount">Paid ₹25,000</span>
+                        </div>
+                    </div>
+                    <div class="vendor-payment">
+                        <div class="vendor-info">
+                            <span class="vendor-name">Eternal Captures</span>
+                            <span class="vendor-category">Photographer</span>
+                        </div>
+                        <div class="payment-info">
+                            <span class="total-cost">₹1,35,000</span>
+                            <span class="paid-amount">Paid ₹5,000</span>
+                        </div>
+                    </div>
+                    <div class="vendor-payment">
+                        <div class="vendor-info">
+                            <span class="vendor-name">Floral Elegance</span>
+                            <span class="vendor-category">Decor</span>
+                        </div>
+                        <div class="payment-info">
+                            <span class="total-cost">₹2,48,000</span>
+                            <span class="paid-amount">Paid ₹60,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="fab">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="showScreen('home-screen')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2"/>
+                    <polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('wedding-events-screen')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Events</span>
+                <span class="badge">12</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('guests-screen')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Guests</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('budget-detail-screen')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Budget</span>
+            </button>
+            <button class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 11l3 3l8-8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>Tasks</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="app-script.js"></script>
+</body>
+</html>

@@ -346,6 +346,9 @@ class VPlanitLanding {
             });
         }
         
+        // App Showcase functionality
+        this.setupAppShowcase();
+        
         // Keyboard navigation
         on(document, 'keydown', (e) => {
             if (e.key === 'Tab') {
@@ -365,6 +368,125 @@ class VPlanitLanding {
                 // Page is visible again
             }
         });
+    }
+    
+    // App Showcase functionality
+    setupAppShowcase() {
+        const carouselTrack = qs('#carousel-track');
+        const indicators = qsa('.indicator');
+        const prevBtn = qs('.nav-arrow.prev');
+        const nextBtn = qs('.nav-arrow.next');
+        const slides = qsa('.carousel-slide');
+        
+        if (!carouselTrack || !indicators.length || !slides.length) return;
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to update active slide
+        const updateActiveSlide = (slideIndex) => {
+            // Update slides
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === slideIndex);
+            });
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === slideIndex);
+            });
+            
+            // Update navigation buttons
+            if (prevBtn) prevBtn.disabled = slideIndex === 0;
+            if (nextBtn) nextBtn.disabled = slideIndex === totalSlides - 1;
+            
+            currentSlide = slideIndex;
+        };
+        
+        // Navigation button handlers
+        if (prevBtn) {
+            on(prevBtn, 'click', () => {
+                if (currentSlide > 0) {
+                    updateActiveSlide(currentSlide - 1);
+                }
+            });
+        }
+        
+        if (nextBtn) {
+            on(nextBtn, 'click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    updateActiveSlide(currentSlide + 1);
+                }
+            });
+        }
+        
+        // Indicator click handlers
+        indicators.forEach((indicator, index) => {
+            on(indicator, 'click', () => {
+                updateActiveSlide(index);
+            });
+        });
+        
+        // Auto-rotate slides
+        let autoRotateInterval;
+        const startAutoRotate = () => {
+            autoRotateInterval = setInterval(() => {
+                const nextSlide = (currentSlide + 1) % totalSlides;
+                updateActiveSlide(nextSlide);
+            }, 4000);
+        };
+        
+        const stopAutoRotate = () => {
+            if (autoRotateInterval) {
+                clearInterval(autoRotateInterval);
+            }
+        };
+        
+        // Start auto-rotation
+        startAutoRotate();
+        
+        // Pause auto-rotation on hover
+        const carousel = qs('.screenshot-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', stopAutoRotate);
+            carousel.addEventListener('mouseleave', startAutoRotate);
+        }
+        
+        // Keyboard navigation
+        on(document, 'keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                updateActiveSlide(currentSlide - 1);
+            } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+                updateActiveSlide(currentSlide + 1);
+            }
+        });
+        
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        const handleTouchStart = (e) => {
+            startX = e.touches[0].clientX;
+        };
+        
+        const handleTouchEnd = (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0 && currentSlide < totalSlides - 1) {
+                    // Swipe left - next slide
+                    updateActiveSlide(currentSlide + 1);
+                } else if (diff < 0 && currentSlide > 0) {
+                    // Swipe right - previous slide
+                    updateActiveSlide(currentSlide - 1);
+                }
+            }
+        };
+        
+        if (carousel) {
+            carousel.addEventListener('touchstart', handleTouchStart);
+            carousel.addEventListener('touchend', handleTouchEnd);
+        }
     }
 }
 
@@ -411,3 +533,5 @@ if ('performance' in window) {
 ✓ Accessibility features (focus states, ARIA labels)
 ✓ Responsive design works 320px-4K
 */
+
+

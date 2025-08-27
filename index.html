@@ -9,6 +9,12 @@
     <meta name="theme-color" content="#0f1115">
     <title>VPlanit - Plan Weddings Beautifully</title>
     
+            <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/Frame 21.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/Frame 21.png">
+        <link rel="apple-touch-icon" href="assets/icons/Frame 21.png">
+        <link rel="shortcut icon" href="assets/icons/Frame 21.png">
+    
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +29,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="logo" aria-label="VPlanit Home">
-                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <rect width="32" height="32" rx="8" fill="#e7c55a"/>
-                    <path d="M8 16L12 20L24 12" stroke="#0f1115" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <img src="assets/icons/Frame 21.png" alt="VPlanit Logo" class="logo-icon" width="32" height="32">
                 <span class="logo-text">VPlanit</span>
             </a>
             
@@ -219,54 +222,144 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery" id="gallery">
+        <!-- App Showcase Section - Google Play Store Style -->
+        <section class="app-showcase" id="app-showcase">
             <div class="container">
-                <h2 class="section-title reveal">See VPlanit in action</h2>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item reveal" data-parallax>
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-content">
-                                <span>Timeline View</span>
+                <div class="showcase-content">
+                                         <!-- Left Side: Key Features with Context -->
+                     <div class="app-info reveal">
+                         <div class="app-features">
+                             <h3 class="features-title">Wedding Planning Made Simple</h3>
+                             <p class="features-subtitle">Everything you need to plan your perfect wedding, beautifully organized in one app.</p>
+                             
+                             <div class="feature-cards">
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">📅</div>
+                                     <div class="feature-content">
+                                         <h4>Event Timeline Management</h4>
+                                         <p>Create detailed schedules for your wedding day and pre-wedding events. Drag & drop to reorder, set reminders, and keep everyone on track.</p>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">👥</div>
+                                     <div class="feature-content">
+                                         <h4>Guest Management</h4>
+                                         <p>Organize guest lists, track RSVPs, manage seating arrangements, and send messages—all without spreadsheets.</p>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">💰</div>
+                                     <div class="feature-content">
+                                         <h4>Smart Budget Tracking</h4>
+                                         <p>Auto-calculate deposits, GST, and guest counts. Set limits, track expenses, and stay on budget with intelligent insights.</p>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">🏪</div>
+                                     <div class="feature-content">
+                                         <h4>Vendor Discovery</h4>
+                                         <p>Find and book trusted vendors with reviews, portfolios, and instant quotes. Manage contracts and payments in one place.</p>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">✅</div>
+                                     <div class="feature-content">
+                                         <h4>Task Management</h4>
+                                         <p>Never miss a deadline with smart notifications, to-do lists, and progress tracking. Collaborate with family members seamlessly.</p>
+                                     </div>
+                                 </div>
+                                 
+                                 <div class="feature-card-item">
+                                     <div class="feature-icon">🎨</div>
+                                     <div class="feature-content">
+                                         <h4>Inspiration & Planning</h4>
+                                         <p>Collect ideas, save inspiration, create vision boards, and share them with your wedding planning team.</p>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <div class="cta-section">
+                                 <button class="btn btn-primary btn-large">
+                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="download-icon">
+                                         <path d="M12 2v8m0 0l3-3m-3 3l-3-3m-3 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                     </svg>
+                                     Start Planning Your Wedding
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                    
+                    <!-- Right Side: Screenshot Carousel (Like Play Store) -->
+                    <div class="screenshot-carousel reveal">
+                        <div class="carousel-header">
+                            <h3>App Screenshots</h3>
+                            <div class="carousel-nav">
+                                <button class="nav-arrow prev" aria-label="Previous screenshot">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="nav-arrow next" aria-label="Next screenshot">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item reveal" data-parallax>
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-content">
-                                <span>Budget Dashboard</span>
+                        
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="carousel-track">
+                                <div class="carousel-slide active" data-screen="4">
+                                    <img src="assets/images/4.png" alt="VPlanit - Event Management" class="screenshot-img">
+                                    <div class="slide-caption">Event Management</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="5">
+                                    <img src="assets/images/5.png" alt="VPlanit - Guest Management" class="screenshot-img">
+                                    <div class="slide-caption">Guest Management</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="6">
+                                    <img src="assets/images/6.png" alt="VPlanit - Budget Tracking" class="screenshot-img">
+                                    <div class="slide-caption">Budget Tracking</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="7">
+                                    <img src="assets/images/7.png" alt="VPlanit - Calendar & Timeline" class="screenshot-img">
+                                    <div class="slide-caption">Calendar & Timeline</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="8">
+                                    <img src="assets/images/8.png" alt="VPlanit - Vendor Management" class="screenshot-img">
+                                    <div class="slide-caption">Vendor Management</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="9">
+                                    <img src="assets/images/9.png" alt="VPlanit - Analytics & Insights" class="screenshot-img">
+                                    <div class="slide-caption">Analytics & Insights</div>
+                                </div>
+                                <div class="carousel-slide" data-screen="10">
+                                    <img src="assets/images/10.png" alt="VPlanit - Customization" class="screenshot-img">
+                                    <div class="slide-caption">Customization</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item reveal" data-parallax>
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-content">
-                                <span>Guest Manager</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item reveal" data-parallax>
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-content">
-                                <span>Vendor Profiles</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item reveal" data-parallax>
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-content">
-                                <span>Task Tracker</span>
-                            </div>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-screen="4"></span>
+                            <span class="indicator" data-screen="5"></span>
+                            <span class="indicator" data-screen="6"></span>
+                            <span class="indicator" data-screen="7"></span>
+                            <span class="indicator" data-screen="8"></span>
+                            <span class="indicator" data-screen="9"></span>
+                            <span class="indicator" data-screen="10"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Testimonials -->
         <section class="testimonials" id="testimonials">

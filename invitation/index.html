@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VPlanit • Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-pattern" aria-hidden="true"></div>
+  
+  <!-- Hero Invitation -->
+  <header class="hero">
+    <div class="invitation-card">
+      <div class="ornament top"></div>
+      
+      <!-- Couple Image -->
+      <div class="couple-image">
+        <img src="Adirag.jpg" alt="Chirag & Aditi" class="couple-portrait">
+        <div class="image-frame"></div>
+      </div>
+      
+      <div class="couple-names">
+        <h1>Chirag</h1>
+        <div class="and">&</div>
+        <h1>Aditi</h1>
+      </div>
+      
+      <div class="wedding-text">
+        <p class="request">Request the pleasure of your company</p>
+        <p class="date">Wednesday, 4th Feb 2025</p>
+        <p class="time">at 6:00 in the evening</p>
+        <p class="venue">Taj Palace, Jaipur</p>
+      </div>
+      
+      <div class="ornament bottom"></div>
+      
+      <div class="rsvp-section">
+        <p class="rsvp-text">Kindly RSVP by 1st February</p>
+        <button class="btn-rsvp" id="openRSVP">RSVP Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- RSVP Modal -->
+  <div class="modal" id="rsvpModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>RSVP</h2>
+        <button class="close-btn" id="closeRSVP">&times;</button>
+      </div>
+      
+      <form class="rsvp-form" id="rsvpForm">
+        <!-- Family Details -->
+        <div class="form-section">
+          <h3>Family Details</h3>
+          <div class="form-row">
+            <input type="text" id="familyName" value="Pachauri Family" disabled>
+            <input type="tel" id="contactPhone" value="+91 98765 43210" disabled>
+          </div>
+        </div>
+
+        <!-- Events -->
+        <div class="form-section">
+          <h3>Events You'll Attend</h3>
+          <div class="events-grid">
+            <label class="event-option">
+              <input type="checkbox" class="evt" value="Haldi" checked>
+              <span class="event-name">Haldi</span>
+            </label>
+            <label class="event-option">
+              <input type="checkbox" class="evt" value="Mehndi">
+              <span class="event-name">Mehndi</span>
+            </label>
+            <label class="event-option">
+              <input type="checkbox" class="evt" value="Sangeet">
+              <span class="event-name">Sangeet</span>
+            </label>
+            <label class="event-option">
+              <input type="checkbox" class="evt" value="Wedding" checked>
+              <span class="event-name">Wedding</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Family Members -->
+        <div class="form-section">
+          <div class="section-header">
+            <h3>Family Members</h3>
+            <button type="button" class="btn-add" id="addMember">+ Add Guest</button>
+          </div>
+          
+          <div id="membersList" class="members-list">
+            <!-- Members will be added here -->
+          </div>
+        </div>
+
+        <!-- Common Travel Details -->
+        <div class="form-section">
+          <h3>Travel & Arrival</h3>
+          <div class="form-row">
+            <input type="text" id="overallCity" placeholder="Arrival City">
+            <input type="date" id="overallDate" placeholder="Arrival Date">
+          </div>
+          <div class="form-row">
+            <input type="time" id="overallTime" placeholder="Arrival Time">
+            <select id="overallTransport">
+              <option value="">Transport Mode</option>
+              <option value="Flight">Flight</option>
+              <option value="Train">Train</option>
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="saveDraft">Save Draft</button>
+          <button type="submit" class="btn-primary">Submit RSVP</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div class="success-modal" id="successModal">
+    <div class="success-content">
+      <div class="success-icon">🎉</div>
+      <h2>Thank You!</h2>
+      <p>Your RSVP has been submitted successfully.</p>
+      <p class="couple-names">Chirag & Aditi</p>
+      <p>We can't wait to celebrate with you!</p>
+      <button class="btn-primary" id="closeSuccess">Close</button>
+    </div>
+  </div>
+
+  <!-- Member Template -->
+  <template id="memberTpl">
+    <div class="member-card">
+      <div class="member-header">
+        <h4>Guest</h4>
+        <button type="button" class="btn-remove" title="Remove guest">×</button>
+      </div>
+      
+      <div class="member-fields">
+        <input type="text" class="m-name" placeholder="Full Name" required>
+        
+        <div class="age-selector">
+          <label class="age-option">
+            <input type="radio" name="age-${Date.now()}" class="m-adult" value="adult" checked>
+            <span class="age-label">Adult</span>
+          </label>
+          <label class="age-option">
+            <input type="radio" name="age-${Date.now()}" class="m-adult" value="child">
+            <span class="age-label">Child</span>
+          </label>
+        </div>
+        
+        <div class="accommodation-toggle">
+          <label>
+            <input type="checkbox" class="m-accom">
+            <span>Need accommodation?</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
