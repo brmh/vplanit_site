@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VPlanit - Plan weddings beautifully. One app for timelines, budgets, guests, and vendors.">
+    <meta property="og:title" content="VPlanit - Plan Weddings Beautifully">
+    <meta property="og:description" content="One app for timelines, budgets, guests, and vendors.">
+    <meta name="theme-color" content="#0f1115">
+    <title>VPlanit - Plan Weddings Beautifully</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="logo" aria-label="VPlanit Home">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="8" fill="#e7c55a"/>
+                    <path d="M8 16L12 20L24 12" stroke="#0f1115" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">VPlanit</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how" class="nav-link">How it works</a>
+                <a href="#vendors" class="nav-link">For Vendors</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#download" class="btn btn-primary">Get the App</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="bg-spotlight"></div>
+            <div class="bg-bokeh"></div>
+            <div class="bg-grid"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title reveal">Plan weddings, beautifully.</h1>
+                    <p class="hero-subtitle reveal">Timelines, budgets, guests, and vendors—together in one elegant app.</p>
+                    
+                    <div class="hero-actions reveal">
+                        <a href="#download" class="btn btn-primary btn-large">Get the App</a>
+                        <a href="#features" class="btn btn-ghost btn-large">Explore Features</a>
+                    </div>
+                </div>
+                
+                <!-- Line Art -->
+                <svg class="hero-art" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                    <path class="ring-path" d="M40 40c0-33.137 26.863-60 60-60s60 26.863 60 60-26.863 60-60 60-60-26.863-60-60z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="377"/>
+                    <path class="knot-path" d="M100 80c0 0-20 20-20 40s20 40 20 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="120"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="social-proof">
+            <div class="container">
+                <p class="social-proof-text reveal">
+                    Trusted by <strong>5,000+ couples</strong> & <strong>2,000+ vendors</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title reveal">Everything you need to plan the perfect wedding</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="8" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 20L22 26L32 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 32L22 26L32 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Event Timelines</h3>
+                        <p class="feature-description">Create detailed schedules for your wedding day and pre-wedding events.</p>
+                    </div>
+                    
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 12v12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Smart Budgeting</h3>
+                        <p class="feature-description">Track expenses, set limits, and stay on budget with intelligent insights.</p>
+                    </div>
+                    
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 24c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12-12-5.373-12-12z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Guest Management</h3>
+                        <p class="feature-description">Organize guest lists, track RSVPs, and manage seating arrangements.</p>
+                    </div>
+                    
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M8 8h32v32H8z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 16h16v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24h12v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 32h8v4H16z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Vendor Discovery</h3>
+                        <p class="feature-description">Find and book trusted vendors with reviews, portfolios, and instant quotes.</p>
+                    </div>
+                    
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M8 8h32v32H8z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 16h16v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24h12v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 32h8v4H16z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">To-Dos & Reminders</h3>
+                        <p class="feature-description">Never miss a deadline with smart notifications and task management.</p>
+                    </div>
+                    
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M8 8h32v32H8z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 16h16v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24h12v4H16z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 32h8v4H16z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Inspiration Boards</h3>
+                        <p class="feature-description">Collect ideas, save inspiration, and share vision boards with your team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how">
+            <div class="container">
+                <h2 class="section-title reveal">How it works</h2>
+                
+                <div class="steps-grid">
+                    <div class="step reveal">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Create your wedding & events</h3>
+                        <p class="step-description">Set up your wedding profile and add all your pre-wedding events.</p>
+                    </div>
+                    
+                    <div class="step reveal">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Add guests, budget, and tasks</h3>
+                        <p class="step-description">Build your guest list, set your budget, and create your to-do list.</p>
+                    </div>
+                    
+                    <div class="step reveal">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Discover vendors & track progress</h3>
+                        <p class="step-description">Find vendors, book services, and monitor your wedding planning progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Section: Users & Vendors -->
+        <section class="split-section" id="vendors">
+            <div class="container">
+                <div class="split-grid">
+                    <div class="split-card reveal">
+                        <h3 class="split-title">For Couples</h3>
+                        <ul class="benefits-list">
+                            <li>All-in-one wedding planning</li>
+                            <li>Smart budget tracking</li>
+                            <li>Guest list management</li>
+                            <li>Vendor discovery & booking</li>
+                        </ul>
+                        <a href="#download" class="btn btn-primary">Plan Your Wedding</a>
+                    </div>
+                    
+                    <div class="split-card reveal">
+                        <h3 class="split-title">For Vendors</h3>
+                        <ul class="benefits-list">
+                            <li>Quality leads & inquiries</li>
+                            <li>Customer reviews & ratings</li>
+                            <li>Fast payment processing</li>
+                            <li>Professional profile showcase</li>
+                        </ul>
+                        <a href="#vendors" class="btn btn-outline">List Your Business</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="section-title reveal">See VPlanit in action</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal" data-parallax>
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-content">
+                                <span>Timeline View</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal" data-parallax>
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-content">
+                                <span>Budget Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal" data-parallax>
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-content">
+                                <span>Guest Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal" data-parallax>
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-content">
+                                <span>Vendor Profiles</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item reveal" data-parallax>
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-content">
+                                <span>Task Tracker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title reveal">What couples are saying</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial reveal">
+                        <blockquote>
+                            "VPlanit made our wedding planning so much easier. The timeline feature kept us on track, and we found amazing vendors through the platform."
+                        </blockquote>
+                        <cite>
+                            <strong>Priya & Arjun</strong>
+                            <span>Jaipur</span>
+                        </cite>
+                    </div>
+                    
+                    <div class="testimonial reveal">
+                        <blockquote>
+                            "The budget tracking was a lifesaver. We stayed within our budget and had the wedding of our dreams thanks to VPlanit."
+                        </blockquote>
+                        <cite>
+                            <strong>Meera & Raj</strong>
+                            <span>Delhi</span>
+                        </cite>
+                    </div>
+                    
+                    <div class="testimonial reveal">
+                        <blockquote>
+                            "As a vendor, VPlanit has brought us quality leads and helped us grow our business. The platform is incredibly user-friendly."
+                        </blockquote>
+                        <cite>
+                            <strong>Anjali Events</strong>
+                            <span>Mumbai</span>
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title reveal">Frequently Asked Questions</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is VPlanit free to use?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! VPlanit offers a free plan with essential features. Premium plans unlock advanced tools and unlimited storage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can vendors list for free?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Vendors can create a basic profile for free. Premium listings include enhanced visibility and lead generation tools.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Does it work offline?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! VPlanit works offline for viewing your plans and data. Changes sync when you're back online.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How is my data protected?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Your data is encrypted and secure. We never share personal information and comply with all privacy regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I collaborate with family members?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Invite family members to collaborate on your wedding plans with different permission levels.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do payouts work for vendors?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Vendors receive payments within 3-5 business days after service completion. We handle all payment processing securely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download" id="download">
+            <div class="container">
+                <div class="download-content reveal">
+                    <h2 class="download-title">Ready to plan your perfect wedding?</h2>
+                    <p class="download-subtitle">Join thousands of couples who trust VPlanit</p>
+                    
+                    <div class="download-actions">
+                        <a href="#" class="btn btn-ghost btn-large">Android</a>
+                        <a href="#" class="btn btn-ghost btn-large">iOS</a>
+                        <a href="#download" class="btn btn-primary btn-large">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="copyright">© 2024 VPlanit. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy</a>
+                        <a href="#" class="footer-link">Terms</a>
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M13.75 1.25h-7.5c-2.9 0-5.25 2.35-5.25 5.25v7.5c0 2.9 2.35 5.25 5.25 5.25h7.5c2.9 0 5.25-2.35 5.25-5.25v-7.5c0-2.9-2.35-5.25-5.25-5.25z" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="10" cy="10" r="3.75" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="15.625" cy="4.375" r="1.25" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M15.625 4.375l-4.375 4.375 4.375 4.375M4.375 4.375h11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="theme-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 1v2M8 13v2M1 8h2M13 8h2M2.5 2.5l1.4 1.4M12.1 12.1l1.4 1.4M2.5 13.5l1.4-1.4M12.1 3.9l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
